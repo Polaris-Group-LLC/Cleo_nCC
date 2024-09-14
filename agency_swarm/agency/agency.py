@@ -268,13 +268,14 @@ class Agency:
             else:
                 raise Exception("Failed to parse response: " + res)
 
-    def demo_gradio(self, height=450, dark_mode=True, **kwargs):
+    def demo_gradio(self, height=650, dark_mode=True, server_port=None, **kwargs):
         """
         Launches a Gradio-based demo interface for the agency chatbot.
 
         Parameters:
             height (int, optional): The height of the chatbot widget in the Gradio interface. Default is 600.
             dark_mode (bool, optional): Flag to determine if the interface should be displayed in dark mode. Default is True.
+            server_port (int, optional): The port number to use for the Gradio server. If not provided, Gradio will choose a random available port.
             **kwargs: Additional keyword arguments to be passed to the Gradio interface.
         This method sets up and runs a Gradio interface, allowing users to interact with the agency's chatbot. It includes a text input for the user's messages and a chatbot interface for displaying the conversation. The method handles user input and chatbot responses, updating the interface dynamically.
         """
@@ -606,6 +607,8 @@ class Agency:
             demo.queue(default_concurrency_limit=10)
 
         # Launch the demo
+        if server_port:
+            kwargs['server_port'] = server_port
         demo.launch(**kwargs)
         return demo
 

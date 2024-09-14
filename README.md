@@ -1,3 +1,10 @@
+To run genesis
+
+agency-swarm genesis 
+
+agency-swarm genesis --openai_key "sk-proj-SH2aoaLTOBeuMm7ot8bWT3BlbkFJiQD9iRFMIqNeeHVHhHBg"
+
+
 # 🐝 Agency Swarm
 
 ![Framework](https://firebasestorage.googleapis.com/v0/b/vrsen-ai/o/public%2Fgithub%2Fagency-swarm-logo-white.png?alt=media&token=76d8615d-1211-426a-bd4f-b9098cbfbc43)
