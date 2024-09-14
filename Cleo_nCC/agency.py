@@ -15,5 +15,8 @@ agency = Agency([cleo, devid, browsing_agent,  # Add browsing_agent to the top-l
                 temperature=0.3,
                 )
 
+import os
+
 if __name__ == '__main__':
-    agency.demo_gradio(server_port=7881)
+    port = int(os.environ.get("PORT", 5151))
+    agency.demo_gradio(server_port=port)
